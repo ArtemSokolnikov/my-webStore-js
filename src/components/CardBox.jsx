@@ -13,11 +13,9 @@ const CardBox = ({handleAddItem,productList,setProductList,updateProductList, ha
       {isViewCard && !isViewCleanCard &&  (
         <ProductDetails
           updateProductList={updateProductList}
+          setViewCleanCard={setViewCleanCard}
           setViewCard={setViewCard}
           choosedProduct={choosedProduct}
-          handleChoosedProduct={handleChoosedProduct}
-          productList={productList}
-          setProductList={setProductList}
         />
       )}
       {!isViewCard && isViewCleanCard &&  (
@@ -26,8 +24,6 @@ const CardBox = ({handleAddItem,productList,setProductList,updateProductList, ha
           setViewCard={setViewCard}
           setViewCleanCard={setViewCleanCard}
           choosedProduct={choosedProduct}
-          handleChoosedProduct={handleChoosedProduct}
-          productList={productList} setProductList={setProductList}
         />
       )}
     </div>

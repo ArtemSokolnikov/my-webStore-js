@@ -36,6 +36,11 @@ const ProductDetails = ({
     setItem(newItem)
   }
 
+  const handleClosedButton = () => {
+    setViewCard(false);
+    setViewCleanCard(false)
+  }
+
   return (
     <div className='card-container'>
       <div className='content-image'>
@@ -45,7 +50,7 @@ const ProductDetails = ({
         <Button
           variant='contained'
           className='btn-back'
-          onClick={() => { setViewCard(false); setViewCleanCard(false) }}
+          onClick={handleClosedButton}
         >
           Close
         </Button>

@@ -37,7 +37,7 @@ const StoreIntro = () => {
       <div className='main-area'>
         <Header />
         <CardBox handleAddItem={handleAddItem} updateProductList={updateProductList} productList={productList} setProductList={setProductList} isViewCard={isViewCard} isViewCleanCard={isViewCleanCard}
-          setViewCleanCard={setViewCleanCard} handleChoosedProduct={handleChoosedProduct} choosedProduct={choosedProduct} setViewCard={setViewCard} setViewCleanCard={setViewCleanCard} />
+          setViewCleanCard={setViewCleanCard} handleChoosedProduct={handleChoosedProduct} choosedProduct={choosedProduct} setViewCard={setViewCard} />
       </div>
     </div>
   );

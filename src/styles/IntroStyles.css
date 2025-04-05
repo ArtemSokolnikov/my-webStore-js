@@ -1,0 +1,9 @@
+.wrapper {
+  background: #9f9f9f29;
+}
+.main-area {
+  max-width: 1940px;
+  margin: 0px auto;
+  padding: 20px;
+  min-height: 100vh;
+}

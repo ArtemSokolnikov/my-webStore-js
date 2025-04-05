@@ -1,0 +1,28 @@
+.action-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 36px;
+  column-gap: 10px;
+  input{
+    background-color: #9f9f9f29;
+    border: none;
+    border-radius: 6px;
+    &:focus-visible{
+      outline: 1px solid #9f9f9f;
+    }
+  }
+}
+
+.input-base{
+  min-width: 150px;
+  border-radius: 6px;
+}
+
+@media(max-width:768px){
+  .action-container {
+    row-gap: 15px;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+}

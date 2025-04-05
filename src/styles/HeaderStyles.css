@@ -1,0 +1,91 @@
+.header-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  height: 68px;
+}
+
+.banner-container {
+  padding: 0px 20px;
+}
+
+.header-title {
+  display: grid;
+  grid-column: 2/12;
+  grid-template-columns: 8fr 1fr 1fr;
+  grid-template-areas: "imageTitle title imageCart";
+  align-self: center;
+  cursor: pointer;
+
+  .header-title-image {
+    display: block;
+    grid-area: imageTitle;
+  }
+  .burger-menu{
+    display: none;
+  }
+
+  .homePage {
+    grid-area: title;
+    text-align: end;
+    align-self: center;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    button {
+      border: none;
+    }
+  }
+
+  .header-cart-image {
+    text-align: end;
+    align-self: center;
+    img {
+      grid-area: imageCart;
+      width: 32px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+}
+
+.header-content {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    height: 88px;
+  }
+  .header-content {
+    padding: 0px;
+  }
+  .header-title {
+    .header-title-image {
+      display: none;
+    }
+    .burger-menu{
+      display: block;
+    }
+  }
+
+  .header-burgerMenu {
+    display: block;
+    grid-area: imageTitle;
+  }
+
+  .homePage {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0px;
+  }
+}
+
+.header-image {
+  width: 100%;
+}

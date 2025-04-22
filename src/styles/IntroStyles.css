@@ -7,3 +7,8 @@
   padding: 20px;
   min-height: 100vh;
 }
+.mainCardContent {
+  display: grid;
+  /* justify-content: space-around; */
+  /* grid-template-columns: 1fr 1fr; */
+}

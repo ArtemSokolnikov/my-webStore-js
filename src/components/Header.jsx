@@ -2,6 +2,7 @@ import cartIcon from '../images/Cart.svg';
 import logoIcon from '../images/Logo.png';
 import burgerMenuIcon from '../images/burger-menu.svg';
 import '../styles/HeaderStyles.css';
+import React from 'react';
 
 const Header = () => {
   return (

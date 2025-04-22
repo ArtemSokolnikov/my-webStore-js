@@ -1,43 +1,30 @@
-import { useState } from 'react';
+import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet, useParams } from 'react-router-dom';
+import { setSelectedProduct } from '../store/productListSlice';
+import { selectProductPropsCombined } from '../store/selectors';
 import '../styles/IntroStyles.css';
-import { defaultProduct, products } from '../utils/StoreData';
-import CardBox from './CardBox';
 import Header from './Header';
 
 const StoreIntro = () => {
-  const [isViewCard, setViewCard] = useState(false);
-  const [isViewCleanCard, setViewCleanCard] = useState(false);
-  const [productList, setProductList] = useState(products);
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const { collectionOfProducts, isCreating } = useSelector(selectProductPropsCombined);
 
-  const [choosedProduct, setChoosedProduct] =
-    useState(defaultProduct);
-
-  const handleChoosedProduct = (productItem) => {
-    setViewCard(true);
-    setViewCleanCard(false);
-    setChoosedProduct(productItem);
-  };
-  const updateProductList = (elem, addNewElement) => {
-    if (!addNewElement) {
-      setProductList(prevItems => prevItems.map((item, index, array) => item.id === elem.id ? { ...item, ...elem } : item))
-    }else{
-      setProductList(prevItems =>( [...prevItems,elem]))
-    }
-  };
-
-  const handleAddItem = () => {
-    setViewCleanCard(true);
-    setViewCard(false);
-    setChoosedProduct(defaultProduct);
-  }
-
+  useEffect(() => {
+    if (isCreating) return;
+    const selectedCard = collectionOfProducts.find(p => p.id.toString() === id) || null;
+    dispatch(setSelectedProduct({ value: selectedCard }));
+  }, [id, collectionOfProducts, isCreating]);
 
   return (
-    <div className='wrapper'>
+    <div className='wrapper' data-testid="wrapper">
       <div className='main-area'>
         <Header />
-        <CardBox handleAddItem={handleAddItem} updateProductList={updateProductList} productList={productList} setProductList={setProductList} isViewCard={isViewCard} isViewCleanCard={isViewCleanCard}
-          setViewCleanCard={setViewCleanCard} handleChoosedProduct={handleChoosedProduct} choosedProduct={choosedProduct} setViewCard={setViewCard} />
+        <div className="mainCardContent">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

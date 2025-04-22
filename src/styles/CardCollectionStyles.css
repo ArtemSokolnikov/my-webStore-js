@@ -1,6 +1,13 @@
-.main-content {
-  max-width: 1480px;
-  margin: 0 auto;
+.wrapper-collection {
+  display: grid;
+  /* justify-content: start; */
+  grid-template-columns: repeat(12, 1fr);
+  .main-content {
+    display: grid;
+    grid-column: 1 / 7;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
 }
 
 .product-list {
@@ -36,7 +43,7 @@
   grid-column: 1 / 13;
   grid-template-columns: 1fr;
   row-gap: 26px;
-justify-items: stretch;
+  justify-items: stretch;
   justify-content: center;
 }
 
